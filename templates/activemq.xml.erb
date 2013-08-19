@@ -43,10 +43,18 @@
         <map>
           <authorizationMap>
             <authorizationEntries>
-              <authorizationEntry queue="<%= @admin_auth_queue %>" write="admins" read="admins" admin="admins" />
-              <authorizationEntry topic="<%= @admin_auth_topic %>" write="admins" read="admins" admin="admins" />
-              <authorizationEntry topic="<%= @real_user_auth_queue %>" write="users" read="users" admin="users" />
-              <authorizationEntry queue="<%= @real_user_auth_topic %>" write="users" read="users" admin="users" />
+            <% admin_auth_queue.each do |authqueue| -%>
+				<authorizationEntry queue="<%= authqueue %>" write="admins" read="admins" admin="admins" />
+			<% end -%>
+	         <% admin_auth_topic.each do |authtopic| -%>
+              <authorizationEntry topic="<%= authtopic %>" write="admins" read="admins" admin="admins" />
+			<% end -%>
+            <% real_user_auth_queue.each do |userqueue| -%>
+              <authorizationEntry topic="<%= userqueue %>" write="users" read="users" admin="users" />
+			<% end -%>
+	         <% real_user_auth_topic.each do |usertopic| -%>
+              <authorizationEntry queue="<%= usertopic %>" write="users" read="users" admin="users" />
+			<% end -%>
               <authorizationEntry topic="ActiveMQ.Advisory.>" read="everyone" write="everyone" admin="everyone"/>
             </authorizationEntries>
           </authorizationMap>
