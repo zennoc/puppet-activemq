@@ -47,10 +47,10 @@
               <authorizationEntry topic=">" write="admins" read="<%= @admin_groups %>" admin="<%= @admin_groups %>" />
               <authorizationEntry queue="mcollective.>" write="<%= @admin_groups %>" read="<%= @admin_groups %>" admin="<%= @admin_groups %>" />
               <authorizationEntry topic="mcollective.>" write="<%= @admin_groups %>" read="<%= @admin_groups %>" admin="<%= @admin_groups %>" />
-              <authorizationEntry queue="mcollective.nodes" read="<%= @user_password %" admin="<%= @user_password %" />
-              <authorizationEntry queue="mcollective.reply.>" write="<%= @user_password %" admin="<%= @user_password %" />
-              <authorizationEntry topic="mcollective.*.agent" read="<%= @user_password %" admin="<%= @user_password %" />
-              <authorizationEntry topic="mcollective.registration.agent" write="<%= @user_password %" read="<%= @user_password %" admin="<%= @user_password %" />
+              <authorizationEntry queue="mcollective.nodes" read="<%= @user_password %>" admin="<%= @user_password %>" />
+              <authorizationEntry queue="mcollective.reply.>" write="<%= @user_password %>" admin="<%= @user_password %>" />
+              <authorizationEntry topic="mcollective.*.agent" read="<%= @user_password %>" admin="<%= @user_password %>" />
+              <authorizationEntry topic="mcollective.registration.agent" write="<%= @user_password %>" read="<%= @user_password %>" admin="<%= @user_password %>" />
               <authorizationEntry topic="ActiveMQ.Advisory.>" read="everyone" write="everyone" admin="everyone"/>
             </authorizationEntries>
           </authorizationMap>
